@@ -1,0 +1,90 @@
+
+.row {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+.col {
+	display: block;
+	float:left;
+	margin:0;
+	min-height: 1px;
+}
+.col:first-child { margin-left: 0; }
+
+
+.row:before,
+.row:after { content:""; display:table; }
+.row:after { clear:both;}
+.row { zoom:1; /* For IE 6/7 */ }
+
+/*  GRID OF TWELVE  */
+.twelve {
+	width: 100%;
+}
+
+.eleven {
+  	width: 91.66%;
+}
+.ten {
+  	width: 83.33%;
+}
+
+.nine {
+  	width: 75%;
+}
+
+.eight {
+  	width: 66.66%;
+}
+
+.seven {
+  	width: 58.33%;
+}
+
+.six {
+  	width: 50%;
+}
+
+.five {
+  	width: 41.66%;
+}
+
+.four {
+  	width: 33.33%;
+}
+
+.three {
+  	width: 25%;
+}
+
+.two {
+  	width: 16.66%;
+}
+
+.one {
+  	width: 8.333%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+    .col {
+        margin: 1% 0 1% 0%;
+    }
+    .one,
+    .two,
+    .three,
+    .four,
+    .five,
+    .six,
+    .seven,
+    .eight,
+    .nine,
+    .ten,
+    .eleven,
+    .twelve {
+        width: 100%;
+    }
+}
