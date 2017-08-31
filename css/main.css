@@ -28,24 +28,40 @@ a {
 	margin: 0 auto;
 }
 /*header*/
-.brand{
+#head{
+	position:fixed;
+	background-color: transparent;
+	width: 100%;
+	z-index:1;
+	height: auto;
+}
+#head
+  .brand{
 	float: left;
 	width: 50px;
 	margin:15px;
+	margin-left:25px;
+}  
+.brand-scroll{
+	width: 30px;
+	margin: 10px;
+	margin-left:30px;
+	float:left;
 }
 .menu {
 	float: right;
 }
 .menu-bar{
 	list-style-type: none;
+	margin: 32px 0;
 }
-.menu-items{
+ .menu-items{
 	display: inline-block;
 	padding: 0 10px;
-	margin:32px 0;
 	font-weight: bolder;
 	opacity: .8;
 }
+
 .menu-items:first-child{
 	padding:0;
 	display: none;
@@ -56,14 +72,23 @@ a {
 .menu-items:hover{
 	opacity: 1;
 }
-.active{
-	opacity: 1;
+/*back to top*/
+.scrollTop{
+	position: fixed;
+	background-color: #333;
+	color:rgba(96,125,139 ,1);
+	right:15px ;
+	bottom: 15px;
+	border-radius: 3px;
+}
+.scrollTop i {
+	padding: 20px;
 }
 /*banner*/
-#banner{
+.banner{
 	background-image: url(../img/banner.jpeg);
 	background-size: cover;
-	height: 90vh;
+	height: 100vh;
 	background-repeat: no-repeat;
 }
 
@@ -72,7 +97,7 @@ a {
 	text-transform: uppercase;
 	letter-spacing: 4px;
 	font-size: 150%;
-	padding-top: 10%;
+	padding-top: 20%;
 	text-shadow: 1px 1px 1px #333;
 }
 .banner-img  h1 {
@@ -161,8 +186,7 @@ a {
 	padding-bottom: 15px;
 }
 .serv p {
-	text-align: left;
-	text-indent: 15px;
+	text-align: center;
 }
 /*contacts*/
 #contact {
@@ -240,7 +264,7 @@ footer{
 }
 .social-items a i {
 	font-size: 25px;
-	opacity: .5;
+	opacity: 1;
 	color: #fff !important;
 }
 .social-items a i:hover {
@@ -351,7 +375,7 @@ footer{
 	text-indent: 0;
 }
 /*contact*/
-#contact{
+.contact{
 	height: auto;
 	padding-bottom: 15px;
 }
@@ -454,7 +478,7 @@ footer{
 	text-indent: 0;
 }
 /*contact*/
-#contact{
+.contact{
 	height: auto;
 	padding-bottom: 15px;
 }
@@ -482,15 +506,12 @@ footer{
 }
 }
 /*large screens*/
-@media (min-width: 1440px){
+@media (min-width: 1441px){
 	* {
 	font-size: 25px;
 }
-.brand img {
-	margin: auto 0;
-}
 /*banner*/
-#banner{
+.banner{
 	background-image: url(../img/banner.jpeg);
 	background-size: cover;
 	height: 90vh;

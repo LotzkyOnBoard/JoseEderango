@@ -9,21 +9,21 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/vendor.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="icon" type="icon" href="img/icon.ico">
+	<link rel="icon" type="icon" href="img/Logo.ico">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<body>
+<body id="top">
 	<header id="head">
 		<div class="head wrapper">
 			<div class="row">
 				<div class="col twelve">
 					<div class="brand">
-						<a href="#top"><img src="img/Logo.png"></a>
+						<a href="#top"><img src="img/logo.png"></a>
 					</div>
 					<div class="menu">
 						<ul class="menu-bar">
 							<li class="menu-items"><i class="fa fa-bars"></i></li>
-							<li class="menu-items active"><a href="#">HOME</a></li>
+							<li class="menu-items "><a href="#top" class="active">HOME</a></li>
 							<li class="menu-items"><a href="#about">ABOUT</a></li>
 							<li class="menu-items"><a href="#services">SERVICES</a></li>
 							<li class="menu-items"><a href="#contact">CONTACTS</a></li>
@@ -44,6 +44,7 @@
 						<a href="#about" class="animated slideInUp">know me more</a>
 						</div>
 					</div>
+					<div class="scrollTop"><a href="#top"><i class="fa fa-long-arrow-up"></i></a></div>
 				</div>
 			</div>
 		</div>
@@ -58,7 +59,7 @@
 					
 					<div class="about-text">
 					<h2>GETTING TO KNOW ME</h2>
-						<p>I'm a 2nd year college student and freelancer <span>Cagayan de Oro City </span> based and studies at <abbr title="Lice de Cagayan University">LDCU</abbr>  taking up <abbr title="Bachelor of Science in Information Technology">BSIT</abbr>. I'm highly interested in <span>Web Development</span> and <span>Web Design </span> and im also interested in <span>Software Development</span></p>
+						<p>I'm a 2nd year college student and freelancer <span>Cagayan de Oro City </span> based and studies at <abbr title="Lice de Cagayan University">LDCU</abbr>  taking up <abbr title="Bachelor of Science in Information Technology">BSIT</abbr>. I'm highly interested in <span>Web Development </span>and <span>Design </span> and i'm also interested in <span>Software Development</span></p>
 					</div>
 				</div>
 			</div>
@@ -140,25 +141,6 @@
 			</div>
 		</div>
 	</footer>
-
-	<!--Scripts-->
-	<script type="text/javascript" src="js/smoothscrolling.js"></script>
-	<script>
-		$(function(){
-			$(".menu-items:first-child i").click(function(){
-				if ($(this).is('.fa.fa-bars')) {
-					$(".menu-items").css({
-						'display': 'block',
-						'transition': 'display .8s ease-in'
-					});
-					$(this).removeClass('fa fa-bars').addClass('fa fa-times');
-				} else if($(this).is('.fa.fa-times')){
-					$(".menu-items:not(':first-child')").css('display', 'none');
-					$(this).removeClass('fa fa-times').addClass('fa fa-bars');
-				}
-			});
-		});
-
-	</script><!--menu toggle end mobile-->
+	<script src="js/script.js"></script>
 </body>
 </html>
