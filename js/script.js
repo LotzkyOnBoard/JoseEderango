@@ -70,7 +70,11 @@ $(document).ready(function(){
             "transition": "all 1s linear"    
             });
             $('.menu-bar').css("margin","17px 0");
-            $('.brand').css("width", "28px");
+            $('.brand').css({
+                "width": "28px",
+                "margin-left": "30px",
+                "margin-top": "10px"
+            });
         }else if(w <= 768){
             $('#head').css({
                 "background-color": "#fff",
@@ -78,7 +82,24 @@ $(document).ready(function(){
                 "box-shadow":"2px 3px 3px rgba(0,0,0, .3)",
                 "position": "static"
             });
-        }else {
+            $('.menu-bar').css({
+                "position": "-webkit-sticky",
+                "top": "0",
+                "left": "0",
+                "right": "0"
+            });
+        }else if(top > 80 && w <= 768 && w > 425){
+            $('#head').css({
+                "background-color": "#fff",
+                "transition": "all 1s ease-in",
+                "box-shadow":"2px 3px 3px rgba(0,0,0, .3)",
+                "position": "static"
+            });
+            $('.menu-bar').css({
+                "position": "sticky",
+                "top": "0",
+            });
+        }else{
             $('#head').removeAttr('style').css({
                 "transition": "all 1s ease-out",
                 "position": "fixed"
@@ -90,4 +111,45 @@ $(document).ready(function(){
         }
     });
     
+});;
+
+//scrollspy
+
+$(function(){
+    if($(window).outerWidth() > 768){
+        // Cache selectors
+var lastId,
+    topMenu = $(".menu-bar"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    // All list items
+    menuItems = topMenu.find("a"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    });
+
+// Bind to scroll
+$(window).scroll(function(){
+   // Get container scroll position
+   var fromTop = $(this).scrollTop()+topMenuHeight;
+   
+   // Get id of current scroll item
+   var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+   });
+   // Get the id of the current element
+   cur = cur[cur.length-1];
+   var id = cur && cur.length ? cur[0].id : "";
+   
+   if (lastId !== id) {
+       lastId = id;
+       // Set/remove active class
+       menuItems
+         .parent().removeClass("active")
+         .end().filter("[href='#"+id+"']").parent().addClass("active");
+   }                   
+});
+    }
 });

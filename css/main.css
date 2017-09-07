@@ -12,7 +12,6 @@
 body{
 	color: rgba(96,125,139 ,1);
 	min-width: 320px;
-
 }
 img {
 	max-width: 100%;
@@ -26,6 +25,13 @@ a {
 	max-width: 1440px;
 	min-width: 320px;
 	margin: 0 auto;
+}
+.content {
+	display: none;
+}
+.active{
+	background-color: transparent;
+	opacity: 1 !important;
 }
 /*Animate*/
 @-webkit-keyframes fadeInUp {
@@ -65,7 +71,7 @@ a {
 /*header*/
 #head{
 	position:fixed;
-	background-color: transparent;
+	background-color: #fff;
 	width: 100%;
 	z-index:1;
 	height: auto;
@@ -74,6 +80,7 @@ a {
 	float: left;
 	width: 50px;
 	margin:15px;
+margin-top:20px;
 	margin-left:25px;
 }  
 .menu {
@@ -86,10 +93,15 @@ a {
  .menu-items{
 	display: inline-block;
 	padding: 0 10px;
+	opacity: .5;
+}
+.menu-items:hover{
+	opacity: 1 !important;
 }
 .menu-items a {
 	font-family: 'Teko', sans-serif !important;
 	font-size: 20px;
+	width: 100%;
 }
 
 .menu-items:first-child{
@@ -104,14 +116,40 @@ a {
 	position: fixed;
 	background-color: #333;
 	color:rgba(96,125,139 ,1);
-	right:15px ;
-	bottom: 15px;
+	right:8px ;
+	bottom: 8px;
 	border-radius: 3px;
 }
 .scrollTop i {
-	padding: 28px 30px;
+	padding: 5px 7px;
+	font-size: 25px;
+	font-size:bolder;
+	color: #eee !important;
 }
+.scrollTop {
+	background-color: rgba(96,125,139 ,1);
+	color:#333;
+}
+.scrollTop:hover i {
+	color:rgba(69,90,100 ,1) !important;
+	background-color:#eee;
+	border-radius: 3px;
+}
+/*loader*/
+.loader img{
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+	margin-top: 20%;
+}
+
+
 /*banner*/
+.color-wrap{
+	background-color: rgba(1,1,1, .5);
+	width: 100%;
+	height: 100%;
+}
 #banner{
 	background-image: url(../img/banner.jpg);
 	background-size: cover;
@@ -127,13 +165,15 @@ a {
 	text-transform: uppercase;
 	letter-spacing: 4px;
 	font-size: 150%;
+	color: #eee !important;
 	padding-top: 20%;
 	text-shadow: 1px 1px 1px #333;
 }
 .banner-img  h1 {
-	text-align: left !important;
+	text-align: center !important;
 	text-transform: uppercase;
 	font-size: 400%;
+	color: #eee !important;
 	text-shadow: 1px 2px 2px #333;
 	padding-bottom: 70px;
 }
@@ -143,13 +183,14 @@ a {
 	font-weight: bolder;
 	font-size: 25px;
 	letter-spacing: 2px;
-	border:4px solid rgba(69,90,100 ,1);
+	border:4px solid /*rgba(69,90,100 ,1)*/ #eee;
 	left: 38%;
 	right: 38%;
 	position: absolute;
 	padding: 3px;
 	text-shadow: 1px 1px 1px #333;
 	font-family: 'Teko', sans-serif;
+	color: #eee !important;
 }
 /*abouuuut*/
 .about-img img{
@@ -169,7 +210,7 @@ a {
 }
 .about-text > h2 {
 	text-align: center;
-	font-size: 300%;
+	font-size: 150%;
 	margin-top: 25px;
 	letter-spacing: 2px;
 }
@@ -203,7 +244,7 @@ a {
 	text-align: center;
 }
 .services h1{
-	font-size: 300%;
+	font-size: 150%;
 	letter-spacing: 2px;
 }
 .serv {
@@ -232,7 +273,7 @@ a {
 .contact h3 {
 	text-align: center;
 	margin-top: 25px;
-	font-size: 300%;
+	font-size: 150%;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	color: #fff !important;
@@ -279,6 +320,7 @@ a {
 /*footer*/
 footer{
 	background-color: #607D8B;
+	height: 25px
 }
 .social{
 	margin-bottom: 40px;
@@ -301,11 +343,12 @@ footer{
 	opacity: 1;
 }
 .cred{
-	padding: 15px 0;
 	text-align: center;
 }
 .cred p, .cred a{
 	color: #fff !important;
+	font-size: 14px;
+	padding-top: 3px;
 }
 .cred p i {
 	cursor: pointer;
